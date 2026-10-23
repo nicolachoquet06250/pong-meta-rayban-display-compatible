@@ -7,6 +7,7 @@ export class PongEngine {
   difficulty:Difficulty='NORMAL'; private serveDirection=1;
   constructor(private random:()=>number=Math.random){this.resetBall();}
   get maxPaddleY(){return (FIELD.height-FIELD.paddleH)/2;}
+  getPhase():Phase{return this.phase;}
   setPlayer(value:number){this.playerY=clamp(value,-this.maxPaddleY,this.maxPaddleY);}
   reset(){this.playerScore=0;this.cpuScore=0;this.playerY=0;this.cpuY=0;this.serveDirection=this.random()<.5?-1:1;this.resetBall();this.phase='ready';}
   start(){if(this.phase==='ended')this.reset();if(this.phase==='ready'||this.phase==='paused')this.phase='playing';}

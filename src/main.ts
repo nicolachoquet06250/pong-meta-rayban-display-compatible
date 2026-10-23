@@ -42,7 +42,7 @@ let previous=performance.now();function frame(now:number){const dt=Math.min(.04,
   if(value!==null&&keyboard===0)engine.setPlayer(value*engine.maxPaddleY);else engine.setPlayer(engine.playerY+keyboard*420*dt);
   engine.tick(dt);
   if(engine.playerScore>best){best=engine.playerScore;try{localStorage.setItem('neon-pong-best',String(best));}catch{}}
-  if(engine.phase==='ended'){status.textContent='FIN DE PARTIE';menu();}
+  if(engine.getPhase()==='ended'){status.textContent='FIN DE PARTIE';menu();}
  }
  left.position.y=engine.playerY;right.position.y=engine.cpuY;ball.position.set(engine.ballX,engine.ballY,.2);
  trail.forEach((t,i)=>{t.position.set(engine.ballX-engine.vx*.016*(i+1),engine.ballY-engine.vy*.016*(i+1),.1);t.visible=engine.phase==='playing';});score();renderer.render(scene,camera);requestAnimationFrame(frame);
