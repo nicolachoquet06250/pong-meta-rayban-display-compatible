@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "name": "NEON PONG",
+  "description": "Pong rétro conçu pour Meta Ray-Ban Display et Neural Band.",
+  "appearance": {
+    "theme_color": "#49F6C2",
+    "icon": { "src": "../icons/neon-pong.webp" }
+  }
+}
